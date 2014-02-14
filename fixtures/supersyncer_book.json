@@ -1,0 +1,13 @@
+[
+    {
+        "pk": 1, 
+        "model": "supersyncer.book", 
+        "fields": {
+            "genre": [
+                2
+            ], 
+            "created_at": "2014-02-13 20:06:03", 
+            "title": "Lesser Book of Evil"
+        }
+    }
+]

@@ -1,0 +1,31 @@
+1. install dependencies:
+    sudo apt-get install git python-pip python-dev
+    sudo pip install virtualenv
+
+2. git clone the repository
+    git clone http://github.com/njncalub/hiddencloudserver.git
+
+3. create and activate a virtualenv
+    virtualenv dj137
+    source dj137/bin/activate
+    cd hiddencloudserver
+
+4. install requirements
+    pip install -r requirements/requirements.txt
+
+5. syncdb and migrate
+    python manage.py syncdb
+    python manage.py migrate
+
+6. run the server
+    python manage.py runserver
+
+7. populate data
+    open http://127.0.0.1:8000/admin on your browser
+    add data
+
+8. creating data fixture
+    python manage.py dumpdata --indent 4 supersyncer.<model_name> > fixtures/supersyncer_<model_name>.json
+
+9. load data fixture
+     python manage.py loaddata fixtures/supersyncer_<model_name>.json

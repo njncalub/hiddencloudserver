@@ -1,6 +1,8 @@
+from django.contrib.auth.models import User
 from django.http import HttpResponse
+from tastypie import fields
 from tastypie.authentication import BasicAuthentication, ApiKeyAuthentication
-from tastypie.authorization import DjangoAuthorization
+from tastypie.authorization import Authorization, DjangoAuthorization
 from tastypie.cache import SimpleCache
 from tastypie.constants import ALL
 from tastypie.exceptions import ImmediateHttpResponse
@@ -8,11 +10,11 @@ from tastypie.http import HttpForbidden
 from tastypie.paginator import Paginator
 from tastypie.resources import Resource, ModelResource
 from tastypie.serializers import Serializer
-from hiddencloudserver.supersyncer.models import Book, BookGenre, BookText, BookTextQuestion, BookTextQuestionChoice
+from hiddencloudserver.supersyncer.models import Book, BookGenre, BookAuthor, BookText, BookTextQuestion, BookTextQuestionChoice
 
-class ApiKeyAuthenticationExtended(ApiKeyAuthentication):
-    def get_identifier(self, request):
-        return request.user.username
+# class ApiKeyAuthenticationExtended(ApiKeyAuthentication):
+#     def get_identifier(self, request):
+#         return request.user.username
 
 
 class BaseCorsResource(Resource):
@@ -54,8 +56,9 @@ class BaseModelResource(BaseCorsResource, ModelResource):
 
     class Meta:
         abstract = True
-        excludes = ['creation_time', 'modification_time', 'deleted']
-        authentication = ApiKeyAuthenticationExtended()
+        excludes = ['created_at', 'deleted']
+        # authentication = ApiKeyAuthenticationExtended()
+        authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
         serializer = Serializer(formats=['json'])
         paginator_class = Paginator
@@ -64,37 +67,63 @@ class BaseModelResource(BaseCorsResource, ModelResource):
         detail_allowed_methods = ['get', 'post', 'put']
 
 
-class BookResource(BaseModelResource):
+class UserResource(BaseModelResource):
     class Meta:
-        queryset = Book.objects.all()
-        resource_name = 'book'
-        filtering = { 'title' : ALL }
-        # allowed_methods = ['get']
+        queryset = User.objects.all()
+        resource_name = 'user'
+        excludes = ['email', 'password', 'is_active', 'is_staff', 'is_superuser']
+        allowed_methods = ['get']
 
 
 class BookGenreResource(BaseModelResource):
     class Meta:
         queryset = BookGenre.objects.all()
         resource_name = 'book_genre'
-        # allowed_methods = ['get']
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
+        allowed_methods = ['get', 'post']
+
+
+class BookAuthorResource(BaseModelResource):
+    class Meta:
+        queryset = BookAuthor.objects.all()
+        resource_name = 'book_author'
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
+        allowed_methods = ['get', 'post']
+
+
+class BookResource(BaseModelResource):
+    genre = fields.ManyToManyField(BookGenreResource, 'genre')
+
+    class Meta:
+        queryset = Book.objects.all()
+        resource_name = 'book'
+        allowed_methods = ['get', 'post']
 
 
 class BookTextResource(BaseModelResource):
+    from_book = fields.ForeignKey(BookResource, 'from_book')
+
     class Meta:
         queryset = BookText.objects.all()
         resource_name = 'book_text'
-        # allowed_methods = ['get']
+        allowed_methods = ['get']
 
 
 class BookTextQuestionResource(BaseModelResource):
+    from_book_text = fields.ForeignKey(BookTextResource, 'from_book_text')
+
     class Meta:
         queryset = BookTextQuestion.objects.all()
         resource_name = 'book_text_question'
-        # allowed_methods = ['get']
+        allowed_methods = ['get']
 
 
-class BookTextQuestionChoiceResource(BaseModelResource):
+class BookTextQuestionChoiceResource(ModelResource):
+    from_book_text_question = fields.ForeignKey(BookTextQuestionResource, 'from_book_text_question')
+
     class Meta:
         queryset = BookTextQuestionChoice.objects.all()
         resource_name = 'book_text_question_choice'
-        # allowed_methods = ['get']
+        allowed_methods = ['get']

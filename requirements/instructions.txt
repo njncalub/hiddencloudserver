@@ -16,6 +16,7 @@
 5. syncdb and migrate
     python manage.py syncdb
     python manage.py migrate
+    python manage.py backfill_api_keys
 
 6. run the server
     python manage.py runserver

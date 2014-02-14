@@ -1,11 +1,30 @@
+from tastypie.utils.timezone import now
+from django.contrib.auth.models import User
 from django.db import models
+from django.template.defaultfilters import slugify
+
 
 class BookGenre(models.Model):
     genre = models.CharField(max_length=200)
+    slug = models.SlugField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
         return self.genre
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.genre)[:50]
+
+        return super(BookGenre, self).save(*args, **kwargs)
+
+
+class BookAuthor(models.Model):
+    name = models.CharField(max_length=200, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Book(models.Model):

@@ -105,6 +105,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'hiddencloudserver.corsheaders.middleware.CorsMiddleware',
 )
 
 ROOT_URLCONF = 'hiddencloudserver.urls'
@@ -129,6 +130,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'hiddencloudserver.sitelogic',
     'hiddencloudserver.supersyncer',
+    'hiddencloudserver.corsheaders',
     'tastypie',
     'south',
 )
@@ -155,3 +157,12 @@ LOGGING = {
         },
     }
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = (
+        'GET',
+        'POST',
+        'PUT',
+        'PATCH',
+        'OPTIONS'
+    )

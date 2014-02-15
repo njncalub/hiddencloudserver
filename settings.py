@@ -99,15 +99,6 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-#    'hiddencloudserver.corsheaders.middleware.CorsMiddleware',
-)
-
 ROOT_URLCONF = 'hiddencloudserver.urls'
 
 TEMPLATE_DIRS = (
@@ -130,9 +121,18 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'hiddencloudserver.sitelogic',
     'hiddencloudserver.supersyncer',
-#    'hiddencloudserver.corsheaders',
+    'corsheaders',
     'tastypie',
     'south',
+)
+
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -2,7 +2,7 @@ from tastypie.utils.timezone import now
 from django.contrib.auth.models import User
 from django.db import models
 from django.template.defaultfilters import slugify
-
+from datetime import datetime
 
 class UserProfile(models.Model):
     """
@@ -10,16 +10,19 @@ class UserProfile(models.Model):
     """
 
     uid = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=200, blank=True, null=True)
-    first_name = models.CharField(max_length=200, blank=True, null=True)
-    middle_name = models.CharField(max_length=200, blank=True, null=True)
-    birth_date = models.DateField()
-    email_address = models.EmailField(max_length=200, blank=True, null=True)
+    last_name = models.CharField(max_length=200, blank=True, null=True)         # not required
+    first_name = models.CharField(max_length=200, blank=True, null=True)        # not required
+    middle_name = models.CharField(max_length=200, blank=True, null=True)       # not required
+    birth_date = models.DateField(blank=True, null=True)
+    email_address = models.EmailField(max_length=200, blank=True, null=True)    # not required
     gender = models.CharField(max_length=6, blank=True, null=True)
+    current_year = models.CharField(max_length=1, blank=True, null=True)
     cluster = models.CharField(max_length=100, blank=True, null=True)
     department = models.CharField(max_length=100, blank=True, null=True)
-    speed_benchmark = models.IntegerField(blank=True, null=True)
-    comp_benchmark = models.IntegerField(blank=True, null=True)
+    benchmark_speed = models.IntegerField(blank=True, null=True)
+    benchmark_correct_items = models.IntegerField(blank=True, null=True)
+    benchmark_wrong_items = models.IntegerField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
@@ -32,7 +35,7 @@ class UserLog(models.Model):
     """
 
     user = models.ForeignKey(UserProfile)
-    action = models.CharField(max_length=200, blank=True, null=True)
+    data = models.CharField(max_length=300, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
@@ -41,11 +44,16 @@ class UserLog(models.Model):
 
 class UserProgress(models.Model):
     """
-    This defines the Log for User logins.
+    This defines the Log for User Progress.
     """
 
     user = models.ForeignKey(UserProfile)
-    action = models.CharField(max_length=200, blank=True, null=True)
+    previous_speed = models.IntegerField(blank=True, null=True)
+    total_words_read = models.IntegerField(blank=True, null=True)
+    total_time = models.IntegerField(blank=True, null=True)
+    current_speed = models.IntegerField(blank=True, null=True)
+    correct_items = models.IntegerField(blank=True, null=True)
+    wrong_items = models.IntegerField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -53,7 +61,6 @@ class UserProgress(models.Model):
 
     def __unicode__(self):
         return self.user.uid + " " + self.user.last_name
-
 
 
 class BookGenre(models.Model):

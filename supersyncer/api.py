@@ -10,11 +10,12 @@ from tastypie.http import HttpForbidden
 from tastypie.paginator import Paginator
 from tastypie.resources import Resource, ModelResource
 from tastypie.serializers import Serializer
+from hiddencloudserver.supersyncer.models import UserProfile, UserLog, UserProgress
 from hiddencloudserver.supersyncer.models import Book, BookGenre, BookAuthor, BookText, BookTextQuestion
 
-# class ApiKeyAuthenticationExtended(ApiKeyAuthentication):
-#     def get_identifier(self, request):
-#         return request.user.username
+class ApiKeyAuthenticationExtended(ApiKeyAuthentication):
+    def get_identifier(self, request):
+        return request.user.username
 
 
 class BaseCorsResource(Resource):
@@ -71,8 +72,39 @@ class UserResource(BaseModelResource):
     class Meta:
         queryset = User.objects.all()
         resource_name = 'user'
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
         excludes = ['email', 'password', 'is_active', 'is_staff', 'is_superuser']
         allowed_methods = ['get']
+
+
+class UserProfileResource(BaseModelResource):
+    class Meta:
+        queryset = UserProfile.objects.all()
+        resource_name = 'user_profile'
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
+        allowed_methods = ['post', 'put']
+
+
+class UserLogResource(BaseModelResource):
+    user = fields.ForeignKey(UserProfileResource, "user")
+
+    class Meta:
+        queryset = UserLog.objects.all()
+        resource_name = 'user_log'
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
+        allowed_methods = ['post']
+
+
+class UserProgressResource(BaseModelResource):
+    class Meta:
+        queryset = UserProgress.objects.all()
+        resource_name = 'user_progress'
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
+        allowed_methods = ['post']
 
 
 class BookGenreResource(BaseModelResource):
@@ -81,7 +113,7 @@ class BookGenreResource(BaseModelResource):
         resource_name = 'book_genre'
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
-        allowed_methods = ['get', 'post']
+        allowed_methods = ['get']
 
 
 class BookAuthorResource(BaseModelResource):
@@ -90,16 +122,19 @@ class BookAuthorResource(BaseModelResource):
         resource_name = 'book_author'
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
-        allowed_methods = ['get', 'post']
+        allowed_methods = ['get']
 
 
 class BookResource(BaseModelResource):
     genre = fields.ManyToManyField(BookGenreResource, 'genre')
+    author = fields.ManyToManyField(BookAuthorResource, 'author')
 
     class Meta:
         queryset = Book.objects.all()
         resource_name = 'book'
-        allowed_methods = ['get', 'post']
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
+        allowed_methods = ['get']
 
 
 class BookTextResource(BaseModelResource):
@@ -108,6 +143,8 @@ class BookTextResource(BaseModelResource):
     class Meta:
         queryset = BookText.objects.all()
         resource_name = 'book_text'
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
         allowed_methods = ['get']
 
 
@@ -117,6 +154,8 @@ class BookTextQuestionResource(BaseModelResource):
     class Meta:
         queryset = BookTextQuestion.objects.all()
         resource_name = 'book_text_question'
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
         allowed_methods = ['get']
 
 

@@ -4,7 +4,63 @@ from django.db import models
 from django.template.defaultfilters import slugify
 
 
+class UserProfile(models.Model):
+    """
+    This defines the Profiles of Users.
+    """
+
+    uid = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=200, blank=True, null=True)
+    first_name = models.CharField(max_length=200, blank=True, null=True)
+    middle_name = models.CharField(max_length=200, blank=True, null=True)
+    birth_date = models.DateField()
+    email_address = models.EmailField(max_length=200, blank=True, null=True)
+    gender = models.CharField(max_length=6, blank=True, null=True)
+    cluster = models.CharField(max_length=100, blank=True, null=True)
+    department = models.CharField(max_length=100, blank=True, null=True)
+    speed_benchmark = models.IntegerField(blank=True, null=True)
+    comp_benchmark = models.IntegerField(blank=True, null=True)
+    last_modified = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return self.uid + " " + self.last_name
+
+
+class UserLog(models.Model):
+    """
+    This defines the Log for User logins.
+    """
+
+    user = models.ForeignKey(UserProfile)
+    action = models.CharField(max_length=200, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.user.uid + " " + self.user.last_name
+
+
+class UserProgress(models.Model):
+    """
+    This defines the Log for User logins.
+    """
+
+    user = models.ForeignKey(UserProfile)
+    action = models.CharField(max_length=200, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "user progress"
+
+    def __unicode__(self):
+        return self.user.uid + " " + self.user.last_name
+
+
+
 class BookGenre(models.Model):
+    """
+    This defines the Genres of the Books.
+    """
+
     genre = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -20,26 +76,63 @@ class BookGenre(models.Model):
 
 
 class BookAuthor(models.Model):
-    name = models.CharField(max_length=200, blank=True, null=True)
+    """
+    This defines the Authors of the Books.
+    """
+
+    full_name = models.CharField(max_length=200, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
-        return self.name
+        return self.full_name
 
 
 class Book(models.Model):
+    """
+    This defines the Books.
+    """
+
     title = models.CharField(max_length=200)
+    text = models.TextField(blank=True, null=True)
+    total_words = models.IntegerField(default=0, blank=True, null=True, verbose_name="total words (auto)")
     genre = models.ManyToManyField(BookGenre, blank=True, null=True)
+    author = models.ManyToManyField(BookAuthor, blank=True, null=True)
+    book_url = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def get_total_words(self):
+        return len(self.text.split(' '))
 
     def __unicode__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        self.total_words = self.get_total_words()
+        super(Book, self).save(*args, **kwargs)
+
 
 class BookText(models.Model):
-    from_book = models.ForeignKey(Book)
+    """
+    This defines the Passages/Text from the Books.
+    """
+
+    EASY = 'EA'
+    MEDIUM = 'ME'
+    HARD = 'HA'
+    EXPERT = 'EX'
+    ASIAN = 'AS'
+    DIFFICULTY = (
+        (EASY, 'Easy'),
+        (MEDIUM, 'Medium'),
+        (HARD, 'Hard'),
+        (EXPERT, 'Expert'),
+        (ASIAN, 'Asian'),
+    )
+
     text = models.TextField()
-    total_words = models.IntegerField(blank=True, null=True)
+    from_book = models.ForeignKey(Book)
+    difficulty = models.CharField(max_length=2, choices=DIFFICULTY, default=EASY)
+    total_words = models.IntegerField(default=0, blank=True, null=True, verbose_name="total words (auto)")
     created_at = models.DateTimeField(auto_now_add=True)
 
     def get_total_words(self):
@@ -54,22 +147,61 @@ class BookText(models.Model):
 
 
 class BookTextQuestion(models.Model):
-    from_book_text = models.ForeignKey(BookText)
+    """
+    This defines the Questions and Choices from the Book Texts.
+    """
+
+    ONE = '1'
+    TWO = '2'
+    THREE = '3'
+    FOUR = '4'
+    FIVE = '5'
+    SIX = '6'
+    CHOICES = (
+        (ONE, '1'),
+        (TWO, '2'),
+        (THREE, '3'),
+        (FOUR, '4'),
+        (FIVE, '5'),
+        (SIX, '6'),
+    )
+
     question = models.TextField()
+    # choice_1 = models.TextField(max_length=200, blank=True, null=True)
+    # choice_2 = models.TextField(max_length=200, blank=True, null=True)
+    # choice_3 = models.TextField(max_length=200, blank=True, null=True)
+    # choice_4 = models.TextField(max_length=200, blank=True, null=True)
+    # choice_5 = models.TextField(max_length=200, blank=True, null=True)
+    # choice_6 = models.TextField(max_length=200, blank=True, null=True)
+    choice_1 = models.CharField(max_length=200, blank=True, null=True)
+    choice_2 = models.CharField(max_length=200, blank=True, null=True)
+    choice_3 = models.CharField(max_length=200, blank=True, null=True)
+    choice_4 = models.CharField(max_length=200, blank=True, null=True)
+    choice_5 = models.CharField(max_length=200, blank=True, null=True)
+    choice_6 = models.CharField(max_length=200, blank=True, null=True)
+    correct = models.CharField(max_length=1, choices=CHOICES, default=ONE, verbose_name="correct choice")
+    from_book_text = models.ForeignKey(BookText)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def get_book_title(self):
+        return self.from_book_text.from_book.title
 
     def __unicode__(self):
         return self.question
 
 
-class BookTextQuestionChoice(models.Model):
-    from_book_text_question = models.ForeignKey(BookTextQuestion)
-    choice = models.TextField()
-    is_correct = models.BooleanField()
-    created_at = models.DateTimeField(auto_now_add=True)
+# class BookTextQuestionChoice(models.Model):
+#     """
+#     This defines the Questions from the Book Texts.
+#     """
 
-    def __unicode__(self):
-        return self.choice
+#     from_book_text_question = models.ForeignKey(BookTextQuestion)
+#     choice = models.TextField()
+#     is_correct = models.BooleanField(default=False)
+#     created_at = models.DateTimeField(auto_now_add=True)
+
+#     def __unicode__(self):
+#         return self.choice
 
 
 class Report(models.Model):

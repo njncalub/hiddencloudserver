@@ -4,7 +4,7 @@ from tastypie import fields
 from tastypie.authentication import BasicAuthentication, ApiKeyAuthentication
 from tastypie.authorization import Authorization, DjangoAuthorization
 from tastypie.cache import SimpleCache
-from tastypie.constants import ALL
+from tastypie.constants import ALL, ALL_WITH_RELATIONS
 from tastypie.exceptions import ImmediateHttpResponse
 from tastypie.http import HttpForbidden
 from tastypie.paginator import Paginator
@@ -111,6 +111,10 @@ class BookGenreResource(BaseModelResource):
     class Meta:
         queryset = BookGenre.objects.all()
         resource_name = 'book_genre'
+        filtering = {
+            "genre": ALL,
+            "slug": ALL,
+        }
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
         allowed_methods = ['get']
@@ -120,18 +124,28 @@ class BookAuthorResource(BaseModelResource):
     class Meta:
         queryset = BookAuthor.objects.all()
         resource_name = 'book_author'
+        filtering = {
+            "full_name": ALL,
+        }
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
         allowed_methods = ['get']
 
 
 class BookResource(BaseModelResource):
-    genre = fields.ManyToManyField(BookGenreResource, 'genre')
-    author = fields.ManyToManyField(BookAuthorResource, 'author')
+    genre = fields.ManyToManyField(BookGenreResource, 'genre', full=True)
+    author = fields.ManyToManyField(BookAuthorResource, 'author', full=True)
 
     class Meta:
         queryset = Book.objects.all()
         resource_name = 'book'
+        filtering = {
+            "title": ALL,
+            "text": ALL,
+            "total_words": ALL,
+            "genre": ALL_WITH_RELATIONS,
+            "author": ALL_WITH_RELATIONS,
+        }
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
         allowed_methods = ['get']
@@ -143,6 +157,12 @@ class BookTextResource(BaseModelResource):
     class Meta:
         queryset = BookText.objects.all()
         resource_name = 'book_text'
+        filtering = {
+            "text": ALL,
+            "from_book": ALL_WITH_RELATIONS,
+            "difficulty": ALL,
+            "total_words": ALL,
+        }
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
         allowed_methods = ['get']
@@ -154,6 +174,17 @@ class BookTextQuestionResource(BaseModelResource):
     class Meta:
         queryset = BookTextQuestion.objects.all()
         resource_name = 'book_text_question'
+        filtering = {
+            "question": ALL,
+            "choice_1": ALL,
+            "choice_2": ALL,
+            "choice_3": ALL,
+            "choice_4": ALL,
+            "choice_5": ALL,
+            "choice_6": ALL,
+            "correct": ALL,
+            "from_book_text": ALL_WITH_RELATIONS,
+        }
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
         allowed_methods = ['get']

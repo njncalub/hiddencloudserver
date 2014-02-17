@@ -140,6 +140,7 @@ class BookText(models.Model):
     from_book = models.ForeignKey(Book)
     difficulty = models.CharField(max_length=2, choices=DIFFICULTY, default=EASY)
     total_words = models.IntegerField(default=0, blank=True, null=True, verbose_name="total words (auto)")
+    deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def get_total_words(self):
@@ -174,12 +175,6 @@ class BookTextQuestion(models.Model):
     )
 
     question = models.TextField()
-    # choice_1 = models.TextField(max_length=200, blank=True, null=True)
-    # choice_2 = models.TextField(max_length=200, blank=True, null=True)
-    # choice_3 = models.TextField(max_length=200, blank=True, null=True)
-    # choice_4 = models.TextField(max_length=200, blank=True, null=True)
-    # choice_5 = models.TextField(max_length=200, blank=True, null=True)
-    # choice_6 = models.TextField(max_length=200, blank=True, null=True)
     choice_1 = models.CharField(max_length=200, blank=True, null=True)
     choice_2 = models.CharField(max_length=200, blank=True, null=True)
     choice_3 = models.CharField(max_length=200, blank=True, null=True)
@@ -188,6 +183,7 @@ class BookTextQuestion(models.Model):
     choice_6 = models.CharField(max_length=200, blank=True, null=True)
     correct = models.CharField(max_length=1, choices=CHOICES, default=ONE, verbose_name="correct choice")
     from_book_text = models.ForeignKey(BookText)
+    deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def get_book_title(self):

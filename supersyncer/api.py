@@ -6,7 +6,7 @@ from tastypie.authorization import Authorization, DjangoAuthorization
 from tastypie.cache import SimpleCache
 from tastypie.constants import ALL, ALL_WITH_RELATIONS
 from tastypie.exceptions import ImmediateHttpResponse
-from tastypie.http import HttpForbidden
+from tastypie import http
 from tastypie.paginator import Paginator
 from tastypie.resources import Resource, ModelResource
 from tastypie.serializers import Serializer
@@ -84,7 +84,7 @@ class UserProfileResource(BaseModelResource):
         resource_name = 'user_profile'
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
-        allowed_methods = ['post', 'put']
+        allowed_methods = ['get', 'post', 'put']
 
 
 class UserLogResource(BaseModelResource):

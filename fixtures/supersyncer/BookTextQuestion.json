@@ -1,0 +1,882 @@
+[
+    {
+        "pk": 1,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 14:47:39",
+            "question": "According to the reading, what makes insects and birds alike?",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Both have wings",
+            "choice_2": "Both hatch from eggs ",
+            "choice_3": "Both are small creatures",
+            "from_book_text": 1,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 14:47:39",
+            "question": "The reading mainly talks about:\r\n",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Insects in comparison to other flying animals",
+            "choice_2": "Parts of an Insect",
+            "choice_3": "Characteristics of Insects",
+            "from_book_text": 1,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 14:47:39",
+            "question": "Which of the ff. groups of species are mentioned in the passage?\r\n",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "birds, grasshoppers, flies, maggots, mosquito",
+            "choice_2": "borers, bats, grubs, mosquito, butterflies, wasps",
+            "choice_3": "snails, borers, mosquito, butterflies, moths, worms",
+            "from_book_text": 1,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 14:47:39",
+            "question": "According to the passage, what body part of an insect resembles a feather?",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Antennae",
+            "choice_2": "Legs",
+            "choice_3": "Wings",
+            "from_book_text": 1,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 14:47:39",
+            "question": "Read the following statements:\r\n\r\nI.\tThe body of an insect is divided into a head, thorax and abdomen.\r\nII.\tYoung insects do not always look like their parents.\r\nIII.\tThe wings of an insect are usually thin and transparent that\u2019s why they are not called \u201ctrue\u201d wings.\r\nIV.\tOld wasps have a \u201chard type\u201d body wall.\r\n\r\nWhich of the ff. is true?\r\n",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Statements I & II are true, Statements III and IV are false",
+            "choice_2": "One of the statements is false",
+            "choice_3": "Statements I, II, III, IV are true",
+            "from_book_text": 1,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 15:02:52",
+            "question": "How are ants and bees similar? ",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "They both live in colonies consisting of workers, drones, and a queen. ",
+            "choice_2": "The females or drones appear at swarming time.",
+            "choice_3": "The workers are of the same castes.",
+            "from_book_text": 2,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 15:02:52",
+            "question": "How are ants and bees different?\r\n",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "The ants are more intelligent than the bees.",
+            "choice_2": "The bees are more intelligent than the ants.",
+            "choice_3": "They have the same level of intelligence.",
+            "from_book_text": 2,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 15:02:52",
+            "question": "Which of the following statements are true?\r\n\r\n",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "There are ants which live as hunters and some as shepherds.",
+            "choice_2": "There are ants which grow crops either in or near the nest.",
+            "choice_3": "All of the above.",
+            "from_book_text": 2,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 15:02:52",
+            "question": "Which of the following statements are false?\r\n1.\tSome ants are considered of value to man.\r\n2.\tSome ants are source of great annoyance and injury.\r\n3.\tNone of the above.\r\n",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Some ants are considered of value to man.",
+            "choice_2": "Some ants are source of great annoyance and injury.",
+            "choice_3": "None of the above.",
+            "from_book_text": 2,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 15:02:52",
+            "question": "Which of the following statements are true?\r\n",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Ants are as numerous as the stars in the skies and they vary in size.",
+            "choice_2": "They are found from the tropics to the frozen north, in deserts, swamps and in fact, almost any place where plants or animals live.",
+            "choice_3": "All of the above.",
+            "from_book_text": 2,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 15:02:52",
+            "question": "Why are the ants called the rulers of the world?\r\n\r\nStatement I.\tThey can feed on almost every imaginable kind of plant and animal material. \r\nStatement II.\tWhen the food is scarce, they do not waste time building or manufacturing a complicated nest, they simply \"pack up\" and migrate.\r\n",
+            "choice_4": "Both Statements are false.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Statement I is true.",
+            "choice_2": "Both Statements are true.",
+            "choice_3": "Statement II is true.",
+            "from_book_text": 2,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 18:19:55",
+            "question": "The speaker asserts that:\r\n\r\n",
+            "choice_4": "Old people should take it easy and sleep early at night",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "People at the ends of their lives should cherish every moment while still alive and should not have regrets when they die",
+            "choice_2": "People at the ends of their lives should be contented and accept death when it comes",
+            "choice_3": "People at the ends of their lives should strongly resist death",
+            "from_book_text": 3,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 18:19:55",
+            "question": "In the poem, the phrase \u201cdying of the light\u201d means:\r\nA.\tOld Age\r\nB.\tDeath (O)\r\nC.\tSunset\r\nD.\tPast\r\n",
+            "choice_4": "Fading Youth",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Old Age",
+            "choice_2": "Death",
+            "choice_3": "Sunset",
+            "from_book_text": 3,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 18:19:55",
+            "question": "Which of the following lines demonstrate alliteration?\r\n\r\n",
+            "choice_4": "And you, my father, there on that sad height,",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Because their words had forked no lightning they",
+            "choice_2": "Good men, the last wave by, crying how bright,",
+            "choice_3": "Blind eyes could blaze like meteors and be gay,",
+            "from_book_text": 3,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 18:19:55",
+            "question": "Which of these men shout out how great their actions would've been if they'd been allowed to live longer?\r\n\r\n",
+            "choice_4": "Good Men",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Wild Men",
+            "choice_2": "Grave Men",
+            "choice_3": "Wise Men",
+            "from_book_text": 3,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 18:19:55",
+            "question": "5.\tWhich of the following statements are correct?\r\n\r\nI.\tThe speaker is dying.\r\nII.\tThe speaker\u2019s father is dying.\r\nIII.\tThe speaker is trying to fight his own death.\r\nIV.\tThe speaker is telling his father to fight death.\r\nV.\tThe speaker doesn't want to accept the idea that he\u2019s getting old like his father.\r\nVI.\tThe speaker doesn't want to accept the idea that his father is getting old.\r\n",
+            "choice_4": "Statement VI is true.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Statements I and III are true.",
+            "choice_2": "Statements II and IV are true.",
+            "choice_3": "Statement V is true.",
+            "from_book_text": 3,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 21:13:14",
+            "question": "Which of the following statements is true?\r\n\r\nA. Children make sophisticated method of collecting insects.\r\n\r\nB. Children have little time or inclination to use apparatus in collecting insects.",
+            "choice_4": "Both Statements are false.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "A is true.",
+            "choice_2": "B is true.",
+            "choice_3": "Both statements are true.",
+            "from_book_text": 4,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 21:13:14",
+            "question": "What are the common ways of collecting insects that children do?\r\n\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "None of the above.",
+            "choice_6": "",
+            "choice_1": "Using an old straw hat or a limb. ",
+            "choice_2": "Using a box. ",
+            "choice_3": "Using a small insect net.",
+            "from_book_text": 4,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 21:13:14",
+            "question": "What are some ways of killing insects that children do?\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "None of the above.",
+            "choice_6": "",
+            "choice_1": "Pinning up an insect alive.",
+            "choice_2": "Pressing the body of soft insects with fingers.",
+            "choice_3": "Putting them in a killing bottle with some deadly material.",
+            "from_book_text": 4,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 21:13:14",
+            "question": "Which of the statements are true?\r\n\r\nA. Bees and wasps can be quickly killed by dropping them in coal oil or strong soap suds.\r\n\r\nB. Insects can be quickly killed by putting them inside a bottle with poison, chloroform or ether.",
+            "choice_4": "Both statements are false.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "A is true.",
+            "choice_2": "B is true.",
+            "choice_3": "Both statements are true.",
+            "from_book_text": 4,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 21:13:14",
+            "question": "Which of the following are soft insects?\r\n\r\n",
+            "choice_4": "Mosquitoes, butterflies, wasps",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Flies, butterflies, mosquitoes",
+            "choice_2": "Butterflies, beetles, grasshoppers",
+            "choice_3": "Wasps, flies, mosquitoes",
+            "from_book_text": 4,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-15 21:13:14",
+            "question": "According to the reading, what are the kind of materials that can quickly kill insects?\r\n\r\n",
+            "choice_4": "ether, water, bug spray",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "sodium cyanide, liquid soap, glue",
+            "choice_2": "cologne, potassium cyanide, liquid soap",
+            "choice_3": "sodium cyanide, chloroform, ether",
+            "from_book_text": 4,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 14:56:18",
+            "question": "Which of the following does not belong to the principal classes of subjects of Chinese paintings?\r\n\r\n",
+            "choice_4": "Plants and Insects",
+            "choice_5": "Flowers and Birds",
+            "choice_6": "",
+            "choice_1": "Man and Objects",
+            "choice_2": "Landscape ",
+            "choice_3": "Flora and Fauna",
+            "from_book_text": 5,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 14:56:18",
+            "question": "How does the Chinese Painting differ from the European painting?\r\nThe Chinese painting does not include human figure.\r\nThe European painting does not include human figure.\r\nThe Chinese painting does not have a predominant place assigned to the painting of the human figure.\r\n",
+            "choice_4": "The European painting does not have a predominant place assigned to the painting of the human figure.",
+            "choice_5": "There's no difference between the two.",
+            "choice_6": "",
+            "choice_1": "The Chinese painting does not include human figure.",
+            "choice_2": "The European painting does not include human figure.",
+            "choice_3": "The Chinese painting does not have a predominant place assigned to the painting of the human figure.",
+            "from_book_text": 5,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 14:56:18",
+            "question": "What does \u201clandscape\u201d mean in Chinese painting?\r\nMountain and water picture\r\nConception of Creation\r\nEarth and water\r\n",
+            "choice_4": "Conception of Creation",
+            "choice_5": "Land of gods",
+            "choice_6": "",
+            "choice_1": "\"Mountain and water\" picture",
+            "choice_2": "\"Trees and plants\" picture ",
+            "choice_3": "\"Earth and water\" picture",
+            "from_book_text": 5,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 14:56:18",
+            "question": "Which of the following does not fall under the Third Class?\r\n",
+            "choice_4": "All of the above",
+            "choice_5": "None of the above",
+            "choice_6": "",
+            "choice_1": "Epidendrum and Iris",
+            "choice_2": "Orchids and Chrysanthemum ",
+            "choice_3": "Bamboo and Plum tree",
+            "from_book_text": 5,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 14:56:18",
+            "question": "In some books, what subdivision is included in the fourth class, Plants and Insects? \r\n",
+            "choice_4": "bats",
+            "choice_5": "snakes",
+            "choice_6": "",
+            "choice_1": "reptiles",
+            "choice_2": "fishes",
+            "choice_3": "amphibians",
+            "from_book_text": 5,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 14:56:18",
+            "question": "In what class of painting does Buddhist painting fall under in Chinese paintings?\r\n",
+            "choice_4": "Divine painting",
+            "choice_5": "Religious painting ",
+            "choice_6": "",
+            "choice_1": "Mystical painting",
+            "choice_2": "Heavenly painting",
+            "choice_3": "Celestial painting",
+            "from_book_text": 5,
+            "correct": "5"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 16:01:31",
+            "question": "Which two principles are considered by the Chinese as the source of the universe?\r\n\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "None of the above.",
+            "choice_6": "",
+            "choice_1": "Male and female",
+            "choice_2": "Yang and Yin",
+            "choice_3": "Heaven and Earth",
+            "from_book_text": 6,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 16:01:31",
+            "question": "How was the tiger described as symbol of earthly principle?\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "None of the above.",
+            "choice_6": "",
+            "choice_1": "He challenges the furies of nature that are hostile to the expression of the divine soul.",
+            "choice_2": "His ferocious form lurks in the tempest. ",
+            "choice_3": "He defies tornadoes which bends the bamboos and uproots trees",
+            "from_book_text": 6,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 16:01:31",
+            "question": "What is an example of perfect harmonious combination of the two principles of yang and yin that symbolizes virginal purity?\r\n",
+            "choice_4": "Lotus flower",
+            "choice_5": "Citron flower",
+            "choice_6": "",
+            "choice_1": "Chrysanthemum flower",
+            "choice_2": "Plum tree in flower",
+            "choice_3": "Peony in full bloom",
+            "from_book_text": 6,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 16:01:31",
+            "question": "What religion/belief does not believe in the reality of the world \u2013 that forms are but transitory, the universe an illusion forever flowing into an unending future?\r\n\r\n",
+            "choice_4": "Islam",
+            "choice_5": "Judaism",
+            "choice_6": "",
+            "choice_1": "Taoism",
+            "choice_2": "Confucianism",
+            "choice_3": "Buddhism",
+            "from_book_text": 6,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 16:01:31",
+            "question": "How is freedom from perpetual transmigration attained? \r\n\r\n",
+            "choice_4": "Extinction of desire",
+            "choice_5": "Pursue evolution",
+            "choice_6": "",
+            "choice_1": "Altruism",
+            "choice_2": "Clear conscience",
+            "choice_3": "Be susceptible to pain and death",
+            "from_book_text": 6,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 16:01:31",
+            "question": "Which of these groups of species can be accepted as descendants of dragons?",
+            "choice_4": "parrot, lizard, shark, snakes",
+            "choice_5": "loach, snakes, chicken, crocodile",
+            "choice_6": "",
+            "choice_1": "salmon, chicken, parrot, crocodile",
+            "choice_2": "eagle, mackerel, owl, crocodile",
+            "choice_3": "snake, cod, lizard, duck",
+            "from_book_text": 6,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 17:14:04",
+            "question": "Lines 1,6,12,18 and 3,9,15,19 of the poem are refrain. It suggests that this poem is an example of a ________.",
+            "choice_4": "villainelle",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "villanelle",
+            "choice_2": "villianelle",
+            "choice_3": "villanielle",
+            "from_book_text": 3,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 17:24:00",
+            "question": "Do not Go Gentle into That Good Night\" is an elegy because it:\r\n",
+            "choice_4": "it rhymes",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "has more than 14 lines",
+            "choice_2": "is ironic",
+            "choice_3": "expresses grief",
+            "from_book_text": 3,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 18:18:36",
+            "question": "According to the reading, the \"last judgment\" will take place in ________.\r\n\r\n",
+            "choice_4": "Sodom",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Bethlehem",
+            "choice_2": "Rome",
+            "choice_3": "Jerusalem",
+            "from_book_text": 7,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 18:18:36",
+            "question": "In what year was the end of the world (Apocalypse) prophesied to be?\r\n\r\n",
+            "choice_4": "2012",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "999",
+            "choice_2": "1099",
+            "choice_3": "1999",
+            "from_book_text": 7,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 18:18:36",
+            "question": "Which of the following are supposed to be signs that the end of the world is near?\r\n\r\n",
+            "choice_4": "All of the above. ",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Plague. ",
+            "choice_2": "Alarm.",
+            "choice_3": "Thunder-storm.",
+            "from_book_text": 7,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 18:18:36",
+            "question": "What was previously believed to be the sign of speedy dissolution of the world?\r\n\r\n",
+            "choice_4": "Meteors.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Flame.",
+            "choice_2": "Shooting Star.",
+            "choice_3": "Comets.",
+            "from_book_text": 7,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 18:18:36",
+            "question": "How is the answer in No. 4 regarded in the modern age?\r\n",
+            "choice_4": "Sign that Satan is about to overtake the world.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Agent of destruction of the world.",
+            "choice_2": "Sign of bad luck for any undertaking or concluding any business.",
+            "choice_3": "Sign of coming of a great plague.",
+            "from_book_text": 7,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 18:18:36",
+            "question": "What periods do men have strong beliefs toward prophecies?\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "During seasons of great pestilence.",
+            "choice_2": "Times of calamity.",
+            "choice_3": "During great plague.",
+            "from_book_text": 7,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 18:35:43",
+            "question": "When magnified, the eyes of an insect looks like what?",
+            "choice_4": "",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "grapes",
+            "choice_2": "honeycomb",
+            "choice_3": "little pentagons",
+            "from_book_text": 1,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:12:12",
+            "question": "The methods of singing have been based in what branches of science?\r\n\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Physiology",
+            "choice_2": "Physics",
+            "choice_3": "Phonetics",
+            "from_book_text": 8,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:12:12",
+            "question": "Why are singers afraid of the physiology of the vocal organs?\r\n\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Because they do not clearly understand the limits of its teachings.",
+            "choice_2": "Because they think it is useless to learn it.",
+            "choice_3": "Because they do not know their own vocal organs.",
+            "from_book_text": 8,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:12:12",
+            "question": "What kind of physiological activities can help singers improve their vocals?\r\n\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Drawing up the soft palate against the hard palate.  ",
+            "choice_2": "Placing tongue in many different positions.",
+            "choice_3": "Placing larynx at the low position and by that of the vowel in a high one.",
+            "from_book_text": 8,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:12:12",
+            "question": "Which of the following statements is true?\r\n",
+            "choice_4": "None of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Physiology is concerned also with muscles, nerves, sinews, ligaments, and cartilage, all of which are used in singing, but all of which we cannot feel. ",
+            "choice_2": "Physiology is concerned also with muscles, nerves, sinews, ligaments, and cartilage, all of which are used in singing, but all of which we can feel.",
+            "choice_3": "Physiology is concerned also with muscles, nerves, sinews, ligaments, and cartilage, none of which are used in singing, and all of which we cannot feel.",
+            "from_book_text": 8,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:12:12",
+            "question": "Which of the following exercises should not be practiced?\r\nStudents of singing should use the early morning hours for singing.\r\nStudents of singing should sing every day only so much (like an hour), that on the next day they can practice again, feeling fresh.\r\nStudents of singing should practice singing ten today and none tomorrow.\r\n",
+            "choice_4": "All of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Students of singing should use the early morning hours for singing.",
+            "choice_2": "Students of singing should sing every day only so much (like an hour), that on the next day they can practice again, feeling fresh.",
+            "choice_3": "Students of singing should practice singing ten today and none tomorrow.",
+            "from_book_text": 8,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:12:12",
+            "question": "Which of the following statements is not true?\r\n\r\n",
+            "choice_4": "None of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Vocal exercises weary the singer.",
+            "choice_2": "Practicing proper singing exercises regularly is good for the vocal organs.",
+            "choice_3": "Vocal exercises refresh and improve power of endurance is vocal organs.",
+            "from_book_text": 8,
+            "correct": "1"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:34:08",
+            "question": "Who said the famous declaration \"that long hair was a shame unto a man\"?\r\n",
+            "choice_4": "St. Pedro",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "St. Peter",
+            "choice_2": "St. Patrick",
+            "choice_3": "St. Paul",
+            "from_book_text": 9,
+            "correct": "3"
+        }
+    },
+    {
+        "pk": 51,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:34:08",
+            "question": " Which of the following statements is not true?\r\nThe fashion of the hair and cut of the beard have been state questions in France and England, from the establishment of Christianity until the fifteenth century.\r\nIn earlier times, men were not permitted to do as they liked with their own hair. \r\nThe beards for the soldiers are a disadvantage as they afforded convenient handles for the enemy to lay hold of, preparatory to cutting off their heads.\r\nNone of the above.\r\n",
+            "choice_4": "None of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "The fashion of the hair and cut of the beard have been state questions in France and England, from the establishment of Christianity until the fifteenth century.",
+            "choice_2": "In earlier times, men were not permitted to do as they liked with their own hair. ",
+            "choice_3": "The beards for the soldiers are a disadvantage as they afforded convenient handles for the enemy to lay hold of, preparatory to cutting off their heads.",
+            "from_book_text": 9,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:34:08",
+            "question": "Who ordered the whole of his army to be closely shaven to deprive them of the disadvantage in war?",
+            "choice_4": "Louis the Debonnaire",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "William the Conqueror",
+            "choice_2": "Alexander the Great",
+            "choice_3": "Gregory of Tours",
+            "from_book_text": 9,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:34:08",
+            "question": "Which of the following statements is not true?\r\n",
+            "choice_4": "None of the above.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "At one time, long hair was the symbol of sovereignty in Europe. ",
+            "choice_2": "It was a privilege of the royal family to have their hair long and curled. ",
+            "choice_3": "The nobles, equal to kings in power, wore not only their hair, but their beards of an enormous length.",
+            "from_book_text": 9,
+            "correct": "4"
+        }
+    },
+    {
+        "pk": 54,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:34:08",
+            "question": "Which of the following statements was decreed by the Pope towards the end of the eleventh century?\r\n\r\n",
+            "choice_4": "A man with long hair shall be stoned to death.",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "A man with long hair shall be regarded as highly immoral, criminal, and beastly.",
+            "choice_2": "Such persons as wore long hair should be excommunicated while living and not be prayed for when dead.",
+            "choice_3": "Whenever any body offending in this respect would receive blessing from a priest, a knife can be used to cut off a handful of the hair, throw them in his face and tell him to cut off all the rest.",
+            "from_book_text": 9,
+            "correct": "2"
+        }
+    },
+    {
+        "pk": 55,
+        "model": "supersyncer.booktextquestion",
+        "fields": {
+            "created_at": "2014-02-16 22:34:08",
+            "question": "Who preached a sermon that drew so dreadful a picture of the torments that awaits people with long hair that several of audience burst into tears, and wrung their hair, as if they would have pulled it out by the roots?\r\n\r\n",
+            "choice_4": "One Serlo, the king's chaplain",
+            "choice_5": "",
+            "choice_6": "",
+            "choice_1": "Anselm, Archbishop of Canterbury",
+            "choice_2": "Henry I, the King",
+            "choice_3": "St. Wulstan, Bishop of Worcester",
+            "from_book_text": 9,
+            "correct": "4"
+        }
+    }
+]

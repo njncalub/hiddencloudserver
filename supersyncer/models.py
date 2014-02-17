@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     This defines the Profiles of Users.
     """
 
-    uid = models.CharField(max_length=20)
+    uid = models.CharField(max_length=100)
     last_name = models.CharField(max_length=200, blank=True, null=True)         # not required
     first_name = models.CharField(max_length=200, blank=True, null=True)        # not required
     middle_name = models.CharField(max_length=200, blank=True, null=True)       # not required

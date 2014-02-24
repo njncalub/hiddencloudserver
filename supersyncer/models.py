@@ -210,6 +210,18 @@ class BookTextQuestion(models.Model):
 #         return self.choice
 
 
+class GameResult(models.Model):
+    uid = models.CharField(max_length=100, blank=True, null=True)
+    training_date = models.DateTimeField(blank=True, null=True)
+    average_wpm = models.IntegerField(default=0, blank=True, null=True)
+    average_rc = models.FloatField(default=0.0, blank=True, null=True)
+    total_correct = models.IntegerField(default=0, blank=True, null=True)
+    quiz_score = models.IntegerField(default=0, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.uid + " result on " + self.training_date
+
 class Report(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     pass

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from hiddencloudserver.supersyncer.models import UserProfile, UserLog, UserProgress
 from hiddencloudserver.supersyncer.models import BookGenre, BookAuthor, Book, BookText, BookTextQuestion
+from hiddencloudserver.supersyncer.models import GameResult
 
 
 class UserProfileAdmin(admin.ModelAdmin):
@@ -52,6 +53,10 @@ class BookTextAdmin(admin.ModelAdmin):
     inlines = [BookTextQuestionInline]
 
 
+class GameResultAdmin(admin.ModelAdmin):
+    list_display = ('uid', 'training_date', 'average_wpm', 'average_rc', 'quiz_score')
+
+
 admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(UserLog, UserLogAdmin)
 admin.site.register(UserProgress, UserProgressAdmin)
@@ -61,3 +66,4 @@ admin.site.register(Book, BookAdmin)
 admin.site.register(BookText, BookTextAdmin)
 # admin.site.register(BookTextQuestion, BookTextQuestionAdmin)
 # admin.site.register(BookTextQuestionChoice, BookTextQuestionChoiceAdmin)
+admin.site.register(GameResult, GameResultAdmin)

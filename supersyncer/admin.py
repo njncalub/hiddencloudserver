@@ -47,6 +47,7 @@ class BookTextQuestionInline(admin.StackedInline):
 
 
 class BookTextAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'get_genres', 'total_words')
     # list_filter = ("from_book",)
     inlines = [BookTextQuestionInline]
 

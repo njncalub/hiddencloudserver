@@ -143,6 +143,9 @@ class BookText(models.Model):
     deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def get_genres(self):
+        return ', '.join(g.genre for g in self.from_book.genre.all())
+
     def get_total_words(self):
         return len(self.text.split(' '))
 

@@ -239,6 +239,7 @@ class GameResultResource(BaseModelResource):
             "average_wpm": ALL,
             "average_rc": ALL,
             "quiz_score": ALL,
+            "b_awpm": ALL,
             "training_date": ALL,
         }
         authentication = ApiKeyAuthentication()

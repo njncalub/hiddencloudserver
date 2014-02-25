@@ -217,6 +217,7 @@ class GameResult(models.Model):
     average_rc = models.FloatField(default=0.0, blank=True, null=True)
     total_correct = models.IntegerField(default=0, blank=True, null=True)
     quiz_score = models.IntegerField(default=0, blank=True, null=True)
+    b_awpm = models.IntegerField(default=0, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):

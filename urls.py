@@ -3,7 +3,7 @@ from hiddencloudserver.sitelogic.views import view_index
 from tastypie.api import Api
 from hiddencloudserver.supersyncer.api import UserResource, UserProfileResource, UserLogResource, UserProgressResource
 from hiddencloudserver.supersyncer.api import BookResource, BookGenreResource, BookTextResource, BookTextQuestionResource
-from hiddencloudserver.supersyncer.api import GameResultResource
+from hiddencloudserver.supersyncer.api import GameResultResource, SurveyResource
 
 from django.contrib import admin
 admin.autodiscover()
@@ -22,6 +22,7 @@ v1_api.register(BookGenreResource())
 v1_api.register(BookTextResource())
 v1_api.register(BookTextQuestionResource())
 v1_api.register(GameResultResource())
+v1_api.register(SurveyResource())
 
 urlpatterns += patterns('',
     url(r'^api/', include(v1_api.urls)),

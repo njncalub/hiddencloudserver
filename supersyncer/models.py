@@ -220,7 +220,31 @@ class GameResult(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
-        return self.uid + " result on " + self.training_date
+        return self.uid + " result on " + unicode(self.created_at)
+
+
+class Survey(models.Model):
+    uid = models.CharField(max_length=100, blank=True, null=True)
+    survey_date = models.DateTimeField(blank=True, null=True)
+    q_enjoy_reading = models.IntegerField(default=0, blank=True, null=True)
+    q_want_to_improve = models.IntegerField(default=0, blank=True, null=True)
+    q_like_visuals = models.IntegerField(default=0, blank=True, null=True)
+    q_like_music = models.IntegerField(default=0, blank=True, null=True)
+    q_like_story = models.IntegerField(default=0, blank=True, null=True)
+    q_continue_playing = models.IntegerField(default=0, blank=True, null=True)
+    q_find_way_easily = models.IntegerField(default=0, blank=True, null=True)
+    q_gets_difficult = models.IntegerField(default=0, blank=True, null=True)
+    q_good_rewards = models.IntegerField(default=0, blank=True, null=True)
+    q_relevant_feedback = models.IntegerField(default=0, blank=True, null=True)
+    q_game_helped = models.IntegerField(default=0, blank=True, null=True)
+    q_recommend_to_friends = models.IntegerField(default=0, blank=True, null=True)
+    s_awpm = models.IntegerField(default=0, blank=True, null=True)
+    s_rc = models.FloatField(default=0.0, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.uid + " survey on " + unicode(self.created_at)
+
 
 class Report(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)

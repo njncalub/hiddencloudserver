@@ -14,7 +14,7 @@ from tastypie.resources import Resource, ModelResource
 from tastypie.serializers import Serializer
 from hiddencloudserver.supersyncer.models import UserProfile, UserLog, UserProgress
 from hiddencloudserver.supersyncer.models import Book, BookGenre, BookAuthor, BookText, BookTextQuestion
-from hiddencloudserver.supersyncer.models import GameResult
+from hiddencloudserver.supersyncer.models import GameResult, Survey
 
 class ApiKeyAuthenticationExtended(ApiKeyAuthentication):
     def get_identifier(self, request):
@@ -240,6 +240,32 @@ class GameResultResource(BaseModelResource):
             "average_rc": ALL,
             "quiz_score": ALL,
             "training_date": ALL,
+        }
+        authentication = ApiKeyAuthentication()
+        authorization = DjangoAuthorization()
+        allowed_methods = ['get', 'post', 'put']
+
+
+class SurveyResource(BaseModelResource):
+    class Meta:
+        queryset = Survey.objects.all()
+        resource_name = 'survey'
+        filtering = {
+            "survey_date": ALL,
+            "q_enjoy_reading": ALL,
+            "q_want_to_improve": ALL,
+            "q_like_visuals": ALL,
+            "q_like_music": ALL,
+            "q_like_story": ALL,
+            "q_continue_playing": ALL,
+            "q_find_way_easily": ALL,
+            "q_gets_difficult": ALL,
+            "q_good_rewards": ALL,
+            "q_relevant_feedback": ALL,
+            "q_game_helped": ALL,
+            "q_recommend_to_friends": ALL,
+            "s_awpm": ALL,
+            "s_rc": ALL,
         }
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()

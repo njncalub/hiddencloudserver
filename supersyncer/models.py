@@ -238,6 +238,7 @@ class Survey(models.Model):
     q_relevant_feedback = models.IntegerField(default=0, blank=True, null=True)
     q_game_helped = models.IntegerField(default=0, blank=True, null=True)
     q_recommend_to_friends = models.IntegerField(default=0, blank=True, null=True)
+    b_awpm = models.IntegerField(default=0, blank=True, null=True)
     s_awpm = models.IntegerField(default=0, blank=True, null=True)
     s_rc = models.FloatField(default=0.0, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

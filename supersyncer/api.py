@@ -264,6 +264,7 @@ class SurveyResource(BaseModelResource):
             "q_relevant_feedback": ALL,
             "q_game_helped": ALL,
             "q_recommend_to_friends": ALL,
+            "b_awpm": ALL,
             "s_awpm": ALL,
             "s_rc": ALL,
         }
